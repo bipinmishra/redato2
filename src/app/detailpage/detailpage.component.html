@@ -1,0 +1,35 @@
+
+
+<div class="container">
+        <div class="row">
+            <div class="col">
+                  <h3 class="tex-center mt-2 mb-2 text-center" *ngIf="!isloaded"> Please Wait Data Loading...</h3>
+                <!-- <ul >
+                     <li >
+                         <a href="javascript:viod(0)">{{data.Title}}</a>
+                     </li>
+                 </ul> -->
+            
+              
+    
+                 <div class="cardholder mt-5" *ngIf="isloaded" >
+                        <div class="jumbotron">
+                                <img [src]="episodeData.Poster" alt="" class="mb-2 mt-2">
+                                <h3 class="display-5 ">Title: {{episodeData.Title}}</h3>
+                                <p class="display-6 ">Episode : {{episodeData.Episode}}</p>
+                                <p class="lead">Plot: {{episodeData.Plot}}</p>
+                                <hr class="my-4">
+                                <p>Genre : {{episodeData.Genre}}</p>
+                                <p>Director : {{episodeData.Director}}</p>
+                                <p>Actors: {{episodeData.Actors}}</p>
+                                <p>Writers: {{episodeData.Writer}}</p>
+                                <p class="lead">
+                                  <a class="btn btn-primary btn-lg" routerLink="/list" role="button">Go Back </a>
+                                </p>
+                        </div>
+                 </div>
+             
+            </div>
+        </div>
+    </div>
+    

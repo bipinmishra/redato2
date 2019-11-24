@@ -1,0 +1,32 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+              <h3 class="tex-center mt-2 mb-2 text-center" *ngIf="!isloaded"> Please Wait Data Loading...</h3>
+            <!-- <ul >
+                 <li >
+                     <a href="javascript:viod(0)">{{data.Title}}</a>
+                 </li>
+             </ul> -->
+            
+             <div class="form-group mt-5">
+                    <input type="text" class="form-control" [(ngModel)]="userFilter.Title"  id="exampleInputEmail1" aria-describedby="Search by Title Name" placeholder="Search by Title Name">
+            </div>
+
+             <div class="cardholder mt-5" *ngIf="isloaded" >
+                    <div class="card mb-2" *ngFor="let data of listData.Episodes | filterBy: userFilter; let i = index;">
+                            <div class="card-header">
+                              Series Name : {{listData.Title}}  
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Episode Title : {{data.Title}}</h5>
+                              <p class="card-text">Episode No: {{data.Episode}} | IMDB Ratings: {{data.imdbRating}} | Release Date: {{data.Released}}</p>
+                              <a href="Javascript:void(0)" (click)="gotoDetailPage(i);" class="btn btn-primary">Go to Detail Page</a>
+                            </div>
+                    </div>
+             </div>
+         
+        </div>
+    </div>
+</div>
